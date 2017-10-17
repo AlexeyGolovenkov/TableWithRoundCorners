@@ -12,15 +12,10 @@ class ViewController: UIViewController, UITableViewDataSource {
 
 	@IBOutlet weak var tableViewSubstrate: UIView!
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
 		// Do any additional setup after loading the view, typically from a nib.
 		self.setTableViewBackground()
-	}
-
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
 	}
 
 	private func setTableViewBackground() {
@@ -31,6 +26,8 @@ class ViewController: UIViewController, UITableViewDataSource {
 		backgroundView.layer.mask = maskLayer
 	}
 
+	// MARK: UITableViewDataSource methods
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 100;
 	}
